@@ -1,0 +1,27 @@
+<mat-card class="border w-50" *ngIf="dataLoaded">
+    <mat-card-title>Edit your data.</mat-card-title>
+    <form [formGroup]="editUserForm" (submit)="editUserData();editUserForm.reset()">
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>Name</mat-label>
+                <input matInput placeholder="Enter your name" formControlName="name">
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>Email Address</mat-label>
+                <input matInput placeholder="Enter your email" formControlName="email">
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>UserName</mat-label>
+                <input matInput placeholder="Enter your UserName" formControlName="username">
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            </mat-form-field>
+        </p>
+        <button mat-raised-button color="primary">Update User</button>
+    </form>
+</mat-card>

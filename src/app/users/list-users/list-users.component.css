@@ -1,0 +1,28 @@
+.userData {
+    /* border: 1px solid #888888; */
+    width: 75%;
+    margin: 10px 0;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.userName {
+    width: 300px;
+}
+
+a {
+    padding: 10px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.edit {
+    color: green;
+}
+
+.delete {
+    color: red;
+}

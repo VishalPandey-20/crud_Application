@@ -1,0 +1,14 @@
+<mat-list>
+    <h1 *ngIf="listUsers">Displaying {{listUsers.length}} users</h1>
+    <app-child [getDataFromParent]="sendDataInToChild"></app-child>
+    <div *ngFor="let user of listUsers" class="userData border">
+        <mat-list-item> <span class="userName">Name - {{user.name}}</span>
+            <span>|<a class="edit" [routerLink]="['view',user.id]">View</a></span>
+            <span>|<a class="edit" [routerLink]="['edit',user.id]">Edit</a></span>
+            <span>|<a class="delete" (click)="openDialog('3000ms', '1500ms')">Delete</a></span>
+        </mat-list-item>
+        <!-- <mat-list-item>UserName - {{user.username}} </mat-list-item> -->
+        <mat-list-item>Email - {{user.email}} </mat-list-item>
+        <!-- <mat-list-item>id:- {{user.id}}</mat-list-item> -->
+    </div>
+</mat-list>

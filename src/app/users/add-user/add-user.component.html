@@ -1,0 +1,51 @@
+<mat-card class="border w-50">
+    <mat-card-title>Create new user.</mat-card-title>
+    <form [formGroup]="addUserForm" (submit)="createUser();addUserForm.reset()">
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>Name</mat-label>
+                <input matInput placeholder="Enter your name" formControlName="name">
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                <mat-error>
+                    Name is reqired..!
+                </mat-error>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>Email Address</mat-label>
+                <input matInput placeholder="Enter your email" formControlName="email">
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                <mat-error>
+                    Email is reqired..!
+                </mat-error>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>UserName</mat-label>
+                <input matInput placeholder="Enter your UserName" formControlName="userName">
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                <mat-error>
+                    userName is reqired..!
+                </mat-error>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>Phone Number</mat-label>
+                <input matInput placeholder="Enter your Phone Number" formControlName="phone">
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                <mat-error
+                    *ngIf="addUserForm.controls['phone'].errors && addUserForm.controls['phone'].hasError('required')">
+                    phone number is reqired..!
+                </mat-error>
+                <mat-error
+                    *ngIf="addUserForm.controls['phone'].errors && addUserForm.controls['phone'].hasError('maxlength')">
+                    phone number should be maxlength is 10..!
+                </mat-error>
+            </mat-form-field>
+        </p>
+        <button mat-raised-button color="primary" [disabled]="!addUserForm.valid">Submit</button>
+    </form>
+</mat-card>

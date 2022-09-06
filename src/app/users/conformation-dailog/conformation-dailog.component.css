@@ -1,0 +1,11 @@
+.no {
+    background-color: green;
+    color: #fff;
+    border-radius: 20px;
+}
+
+.yes {
+    background-color: #6c757d;
+    color: #fff;
+    border-radius: 20px;
+}
